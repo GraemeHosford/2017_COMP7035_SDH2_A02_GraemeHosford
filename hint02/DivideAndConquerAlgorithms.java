@@ -6,7 +6,7 @@ package hint02;
 /**
  * The class contains the Divide and Conquer-based Algorithms we are using. 
  */
-public class DivideAndConquerAlgorithmsHint02 {
+public class DivideAndConquerAlgorithms {
 
 	//----------------------------------------------
 	// Class constructor
@@ -14,7 +14,7 @@ public class DivideAndConquerAlgorithmsHint02 {
 	/**
 	 * Constructor of the class. Do not edit it.
 	 */
-	public DivideAndConquerAlgorithmsHint02(){}
+	public DivideAndConquerAlgorithms(){}
 
 	//-------------------------------------------------------------------
 	// 0. iterativeDisplayElements --> Displays all elements of a MyList 
@@ -258,15 +258,15 @@ public class DivideAndConquerAlgorithmsHint02 {
 			if (m2.length() == 0) 
 				scenario = 2;
 			else{
-				int m1E0 = m1.getElement(0);
-				int m2E0 = m2.getElement(0);
+				//int m1E0 = m1.getElement(0);
+				//int m2E0 = m2.getElement(0);
 
 				//Rule 3. m1 first element smaller or equal than m2 first element
-				if (m1E0 < m2E0)
+				//if (m1E0 < m2E0)
 					scenario = 3;	
 				//Rule 4. m1 first element bigger than m2 first element
-				else
-					scenario = 4;	
+				//else
+				//	scenario = 4;	
 			}
 		}
 
@@ -340,6 +340,7 @@ public class DivideAndConquerAlgorithmsHint02 {
 			break;			
 
 			//Rule 4. m1 first element bigger than m2 first element
+			/*
 		case 4: 
 			//1. We get the first element of m1
 			e0 = m1.getElement(0);
@@ -356,7 +357,8 @@ public class DivideAndConquerAlgorithmsHint02 {
 			//5. We also add the element back to m1, so as to not to modify its original state
 			m1.addElement(0, e0);
 
-			break;							
+			break;
+			*/							
 		}
 
 		//-----------------------------
