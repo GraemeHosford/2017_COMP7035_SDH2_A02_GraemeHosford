@@ -7,7 +7,7 @@ package hint01;
 /**
  * The class contains the Divide and Conquer-based Algorithms we are using. 
  */
-public class DivideAndConquerAlgorithmsHint01 {
+public class DivideAndConquerAlgorithms {
 
 	//----------------------------------------------
 	// Class constructor
@@ -15,7 +15,7 @@ public class DivideAndConquerAlgorithmsHint01 {
 	/**
 	 * Constructor of the class. Do not edit it.
 	 */
-	public DivideAndConquerAlgorithmsHint01(){}
+	public DivideAndConquerAlgorithms(){}
 
 	//-------------------------------------------------------------------
 	// 0. iterativeDisplayElements --> Displays all elements of a MyList 
@@ -126,9 +126,7 @@ public class DivideAndConquerAlgorithmsHint01 {
 			second = m.getElement(0);
 			sorted = isReverse(m);
 
-			if(first > second) {
-				sorted = true;
-			} else {
+			if(first < second) {
 				sorted = false;
 			}
 
