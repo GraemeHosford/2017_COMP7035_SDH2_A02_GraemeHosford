@@ -166,7 +166,7 @@ public class ChangeMaking_2 {
 		//-----------------------------
 		//Output Variable --> Return FinalValue
 		//-----------------------------		
-		return res;	
+		return res;		
 	}
 
 	//-------------------------------------------------------------------
@@ -208,11 +208,14 @@ public class ChangeMaking_2 {
 			if (discarded.getElement(index) == 0){
 				//OP1.1.1. We check if the items fits into the knapsack. 
 				// If so, then the current solution can still be improved 
-				if (coinValues.getElement(index) + changeGenerated <= amount) {
-					res = false;
-				} else {
-					discarded.addElement(index, coinValues.getElement(index));
-				}
+				/*
+						if (coinValues.getElement(index) + changeGenerated <= amount) {
+							res = false;
+						} else {
+							discarded.addElement(index, coinValues.getElement(index));
+						}
+				 */
+				res = false;
 			}
 
 			//OP1.2. We increase 'index' so as to try the next item
@@ -222,7 +225,7 @@ public class ChangeMaking_2 {
 		//-----------------------------
 		//Output Variable --> Return FinalValue
 		//-----------------------------		
-		return res;	
+		return res;
 	}
 
 	//-------------------------------------------------------------------
@@ -281,6 +284,7 @@ public class ChangeMaking_2 {
 	 * @return: A MyList containing the amount of coins of each type being selected.
 	 */	
 	public MyList<Integer> solve(MyList<Integer> coinValues, int amount){
+
 		//-----------------------------
 		//Output Variable --> InitialValue
 		//-----------------------------
@@ -313,7 +317,7 @@ public class ChangeMaking_2 {
 			used.addElement(0, 0);
 
 		//OP2. We construct the final solution:
-		while (isFinal(changeGenerated, res, coinValues, amount) == false) {
+		while (isFinal(changeGenerated, used, coinValues, amount) == false) {
 			//OP2.1 Auxiliary variables:
 			//We use 'itemSelected' to state the index of the candidate being selected.
 			int itemSelected = -1;
@@ -328,8 +332,9 @@ public class ChangeMaking_2 {
 				//OP2.2.2. We update the capacity used in the bin
 				changeGenerated += coinValues.getElement(itemSelected);
 
+				int numCoinsOfTypePickedSoFar = res.getElement(itemSelected);
 				res.removeElement(itemSelected);
-				res.addElement(itemSelected, coinValues.getElement(itemSelected));
+				res.addElement(itemSelected, numCoinsOfTypePickedSoFar + 1);
 
 			} else {
 				used.removeElement(itemSelected);
@@ -347,7 +352,7 @@ public class ChangeMaking_2 {
 		//-----------------------------
 		//Output Variable --> Return FinalValue
 		//-----------------------------
-		return res;	
+		return res;
 	}
 
 }
