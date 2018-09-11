@@ -1,1 +1,1 @@
-# 2017_COMP7035_SDH2_A02_GraemeHosford
+Linear Data Structures & Algorithms Assignment Part 02
